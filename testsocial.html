@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paroad: Socials</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #111;
+    color: #fff;
+  }
+  
+  #glitch, #description {
+    font-size: 48px;
+    font-weight: bold;
+    position: relative;
+    animation: glitch 2s infinite;
+  }
+  
+  #description {
+    font-size: 24px;
+  }
+  
+  @keyframes glitch {
+    0%, 100% {
+      text-shadow: -2px -2px 0 #00ff00, 2px -2px 0 #ff0000, -2px 2px 0 #0000ff, 2px 2px 0 #ffff00;
+    }
+    25% {
+      text-shadow: -2px -2px 0 #ffff00, 2px -2px 0 #00ff00, -2px 2px 0 #ff0000, 2px 2px 0 #0000ff;
+    }
+    50% {
+      text-shadow: -2px -2px 0 #ff0000, 2px -2px 0 #ffff00, -2px 2px 0 #00ff00, 2px 2px 0 #0000ff;
+    }
+    75% {
+      text-shadow: -2px -2px 0 #0000ff, 2px -2px 0 #ff0000, -2px 2px 0 #ffff00, 2px 2px 0 #00ff00;
+    }
+  }
+  
+  .social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .social-link-box {
+    width: 100px;
+    height: 100px;
+    background-color: #333;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .social-icon {
+    color: #fff;
+    font-size: 24px; /* Adjusted font size */
+    text-decoration: none;
+  }
+  
+  .footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+  }
+</style>
+<script>
+  document.addEventListener("mousemove", (e) => {
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+    const offsetX = (mouseX / window.innerWidth) * 50;
+    const offsetY = (mouseY / window.innerHeight) * 50;
+    const lightColor = `radial-gradient(circle at ${offsetX}% ${offsetY}%, rgba(255, 255, 255, 0.3), transparent)`;
+    document.documentElement.style.setProperty('--light-gradient', lightColor);
+  });
+</script>
+</head>
+<body>
+  <h1 id="glitch">Paroad</h1>
+  <div id="description">Am I really that bad?</div>
+  <div class="social-links">
+    <a class="social-link-box" href="https://x.com/paroadd">
+      <span class="social-icon">Twitter</span>
+    </a>
+    <a class="social-link-box" href="https:g.dev/paroad">
+      <span class="social-icon">Google Dev</span>
+    </a>
+    <!-- Add more social link boxes here -->
+  </div>
+  <footer class="footer">
+    &copy; 2023 Paroad
+  </footer>
+</body>
+</html>
